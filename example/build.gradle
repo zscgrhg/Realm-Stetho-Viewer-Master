@@ -1,6 +1,12 @@
 apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
 
+repositories {
+    jcenter()
+    maven {
+        url 'https://github.com/zscgrhg/Realm-Stetho-Viewer-Master/raw/master/maven-repo'
+    }
+}
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.3"
@@ -27,6 +33,9 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
     debugCompile  'com.facebook.stetho:stetho:1.4.1'
-    compile project(':tools')
+    debugCompile 'com.zscgrhg:tools:1.1'
+    /*compile project(':tools')*/
     testCompile 'junit:junit:4.12'
 }
+
+
