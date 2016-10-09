@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.think.realm_stetho_viewer">
+
+    <application
+        android:name=".MyDebugApplication"
+        tools:replace="android:name">
+        <provider
+            android:name=".Schema1CP"
+            android:authorities="com.example.think.realm_stetho_viewer.schema1"
+            android:enabled="true"
+            android:exported="true"
+            android:label="hello"
+            ></provider>
+        <provider
+            android:name=".Schema2CP"
+            android:authorities="com.example.think.realm_stetho_viewer.schema2"
+            android:enabled="true"
+            android:exported="true"
+            android:label="hello"
+            ></provider>
+    </application>
+
+</manifest>
