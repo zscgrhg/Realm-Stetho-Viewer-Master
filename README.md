@@ -118,7 +118,7 @@ public class MyDebugApplication extends MyApplication {
 打开chrome浏览器,地址栏键入chrome://inspect/#devices
 
 找到连接的设备,点inspect连接打开inspector UI 窗口
-国内用户第一次打开时需要翻墙,否则你只会看到一个白板窗口
+墙内用户第一次打开时需要翻墙,否则你只会看到一个白板窗口
 
 在 Web SQL 标签下面就可以看到realm数据库内容了
 
