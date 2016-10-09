@@ -1,27 +1,28 @@
 # Realm-Stetho-Viewer-Master
 android realm browser
 
-#android开发使用chrome浏览器开发者工具查看 realm 数据
+####android开发使用chrome浏览器开发者工具查看 realm 数据
 
 ###首先引入Stetho 
 [Stetho官网](http://facebook.github.io/stetho/)
 
-[配置只在debug模式时启用Stetho](http://littlerobots.nl/blog/stetho-for-android-debug-builds-only/)
+
+关于如何配置只在debug模式时启用Stetho，请看这里
+[stetho-for-android-debug-builds-only](http://littlerobots.nl/blog/stetho-for-android-debug-builds-only/)
 
 gradle
 ```
+  repositories {
+      jcenter()
+      maven {
+          url 'https://github.com/zscgrhg/Realm-Stetho-Viewer-Master/raw/master/maven-repo'
+      }
+  }
+
  dependencies { 
     compile 'com.facebook.stetho:stetho:1.4.1' 
+    debugCompile 'com.zscgrhg:tools:1.1'
   } 
-```
-
-maven
-```
- <dependency>
-    <groupid>com.facebook.stetho</groupid> 
-    <artifactid>stetho</artifactid> 
-    <version>1.4.1</version> 
-  </dependency> 
 ```
 
 然后我们需要把想导出的real数据库注册成ContentProvider
@@ -118,7 +119,8 @@ public class MyDebugApplication extends MyApplication {
 
 在 Web SQL 标签下面就可以看到realm数据库内容了
 
-
+![chrome截图1](https://github.com/zscgrhg/Realm-Stetho-Viewer-Master/blob/master/chrome1.png)
+![chrome截图2](https://github.com/zscgrhg/Realm-Stetho-Viewer-Master/blob/master/chrome3.png)
 
  
 
