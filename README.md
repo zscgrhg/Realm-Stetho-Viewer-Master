@@ -25,7 +25,7 @@ maven
 ```
 
 然后我们需要把想导出的real数据库注册成ContentProvider
-假如我有2个realm配置:
+假如我有如下realm配置:
 ```
 public class RealmSchemas {
     public static final RealmConfiguration SCHEMA_1=new RealmConfiguration.Builder()
@@ -33,15 +33,10 @@ public class RealmSchemas {
             .schemaVersion(2)
             .deleteRealmIfMigrationNeeded()
             .build();
-    public static final RealmConfiguration SCHEMA_2=new RealmConfiguration.Builder()
-            .name("schema2.realm")
-            .schemaVersion(3)
-            .deleteRealmIfMigrationNeeded()
-            .build();
 }
 ```
 
-简单注册2个ContentProvider即可
+简单注册1个ContentProvider即可
 
 ```
 public class Schema1CP extends RealmContentProvider {
@@ -63,24 +58,6 @@ public class Schema1CP extends RealmContentProvider {
 }
 ```
 
-```
-public class Schema2CP extends RealmContentProvider {
-    @Override
-    public String getDbName() {
-        return "realmDB2";
-    }
-    @Override
-    public RealmConfiguration getConfiguration() {
-        return RealmSchemas.SCHEMA_2;
-    }
-
-    @Override
-    public String getAuthorities() {
-        return "com.example.think.realm_stetho_viewer.schema2";
-    }
-}
-```
-
 debug清单文件
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -94,13 +71,6 @@ debug清单文件
         <provider
             android:name=".Schema1CP"
             android:authorities="com.example.think.realm_stetho_viewer.schema1"
-            android:enabled="true"
-            android:exported="true"
-            android:label="hello"
-            ></provider>
-        <provider
-            android:name=".Schema2CP"
-            android:authorities="com.example.think.realm_stetho_viewer.schema2"
             android:enabled="true"
             android:exported="true"
             android:label="hello"
@@ -127,7 +97,6 @@ public class MyDebugApplication extends MyApplication {
         InspectorModulesProvider imp
                 = impBuilder
                 .addSchemas(new Schema1CP())
-                .addSchemas(new Schema2CP())
                 .build();
 
         Stetho.initialize(
