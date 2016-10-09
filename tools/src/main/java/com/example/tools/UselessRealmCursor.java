@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * Created by THINK on 2016/10/8.
+ * Cursor的简单实现，没办法,Cursor这个接口太复杂了,凑合用吧,反正是Debug
  */
 
 public class UselessRealmCursor<T> extends AbstractCursor {

@@ -20,6 +20,9 @@ import io.realm.RealmModel;
 
 /**
  * Created by THINK on 2016/10/8.
+ * 获取RealmConfiguration{@link RealmConfiguration}
+ * 默认会将realm数据库文件名作为dataBaseName {@link ContentProviderDbDriverWithDbName}
+ * 构建InspectorModulesProvider {@link InspectorModulesProvider}
  */
 
 public class IMPBuilder {

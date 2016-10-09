@@ -10,6 +10,9 @@ import java.util.List;
 
 /**
  * Created by THINK on 2016/10/9.
+ * 因为 父类{@link ContentProviderDatabaseDriver#getDatabaseNames()}
+ * 总是返回相同的name导致chrome del tools无法正确显示,
+ * 每个ContentProviderDbDriverWithDbName实例应该有全局唯一的dataBaseName
  */
 
 public class ContentProviderDbDriverWithDbName extends ContentProviderDatabaseDriver {

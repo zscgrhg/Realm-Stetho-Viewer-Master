@@ -10,6 +10,10 @@ import io.realm.RealmConfiguration;
 
 public class Schema2CP extends RealmContentProvider {
     @Override
+    public String getDbName() {
+        return "realmDB2";
+    }
+    @Override
     public RealmConfiguration getConfiguration() {
         return RealmSchemas.SCHEMA_2;
     }
