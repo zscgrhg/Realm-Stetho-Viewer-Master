@@ -26,7 +26,7 @@ gradle
 ```
 
 然后我们需要把想导出的real数据库注册成ContentProvider
-假如我有如下realm配置:
+假如有如下realm配置:
 ```
 public class RealmSchemas {
     public static final RealmConfiguration SCHEMA_1=new RealmConfiguration.Builder()
@@ -41,7 +41,10 @@ public class RealmSchemas {
 
 ```
 public class Schema1CP extends RealmContentProvider {
-
+    /**
+    *如果同时有多个数据库，这里应返回一个全局唯一的名字，不然Chrome无法正确显示，
+    *这个方法也可以不重写，默认取数据库的文件名
+    */
     @Override
     public String getDbName() {
         return "realmDB1";
