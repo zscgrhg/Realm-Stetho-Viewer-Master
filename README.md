@@ -130,7 +130,8 @@ public class MyDebugApplication extends MyApplication {
 
 在 Web SQL 标签下面就可以看到realm数据库内容了
 
-
+![chrome截图1](https://github.com/zscgrhg/Realm-Stetho-Viewer-Master/blob/master/chrome1.png)
+![chrome截图2](https://github.com/zscgrhg/Realm-Stetho-Viewer-Master/blob/master/chrome2.png)
 
  
 
