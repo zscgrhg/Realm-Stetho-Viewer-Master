@@ -1,7 +1,7 @@
 # Realm-Stetho-Viewer-Master
 android realm browser
 
-#android开发使用chrome浏览器开发者工具查看 realm 数据
+#android开发使用chrome浏览器开发者工具查看 realm 数据（编辑功能未实现）
 
 ###首先引入Stetho 
 [Stetho官网](http://facebook.github.io/stetho/)
