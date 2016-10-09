@@ -23,6 +23,18 @@ maven
     <version>1.4.1</version> 
   </dependency> 
 ```
+```
+repositories {
+    jcenter()
+    maven {
+        url 'https://github.com/zscgrhg/Realm-Stetho-Viewer-Master/raw/master/maven-repo'
+    }
+}
+dependencies {
+   debugCompile 'com.zscgrhg:tools:1.1'
+}
+
+```
 
 然后我们需要把想导出的real数据库注册成ContentProvider
 假如我有如下realm配置:
