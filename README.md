@@ -3,7 +3,8 @@ android realm browser
 
 ####android开发使用chrome浏览器开发者工具查看 realm 数据
 
-###首先引入Stetho 
+依赖:
+Stetho 
 [Stetho官网](http://facebook.github.io/stetho/)
 
 
